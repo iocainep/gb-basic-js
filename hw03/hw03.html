@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework 3</title>
+</head>
+<body>
+    <script>
+// Задание 1
+
+var i = 2;
+function isPrimeNumber(a) { // проверяем является ли число простым
+		var i = 2;
+		while (i < a) {
+			if (a % i == 0) {
+				return false;
+			}
+			i++;
+		}
+		return true;
+	};
+
+	while (i <= 100) { // выводим простые числа до 100, проверяя их функцией isPrimeNumber
+		if (isPrimeNumber(i)) {
+			console.log(i);
+		}
+		i++;
+	};
+
+// Задание 2 (3)
+
+var jacket = {id: 1, name: "jacket", price: 52, currency: "$", color: "blue"}, // у нас есть объекты со всей информацией о товарах
+	hoody = {id: 2, name: "hoody", price: 45, currency: "$", color: "black"},
+	shirt = {id: 3, name: "shirt", price: 30, currency: "$", color: "white"},
+	basket = [jacket, hoody, shirt]; // про добавлении в корзину формируется массив с этими объектами
+
+function countBasketPrice(basket) { // считаем сумму по ценам товаров в объектах, которые содержатся в массиве basket
+	var sum = 0;
+	for(i = 0; i < basket.length; i++) {
+    sum = sum + basket[i].price
+}
+return sum;
+};
+
+console.log("Сумма корзины: " + countBasketPrice(basket)); // в функцию передаем массив объектов добавленных в корзину товаров и складываем стоимость каждого из них
+</script>
+</body>
+</html>
