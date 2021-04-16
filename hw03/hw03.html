@@ -34,7 +34,7 @@ function isPrimeNumber(a) { // проверяем является ли числ
 var jacket = {id: 1, name: "jacket", price: 52, currency: "$", color: "blue"}, // у нас есть объекты со всей информацией о товарах
 	hoody = {id: 2, name: "hoody", price: 45, currency: "$", color: "black"},
 	shirt = {id: 3, name: "shirt", price: 30, currency: "$", color: "white"},
-	basket = [jacket, hoody, shirt]; // про добавлении в корзину формируется массив с этими объектами
+	basket = [jacket, shirt, hoody, shirt]; // про добавлении в корзину формируется массив с этими объектами
 
 function countBasketPrice(basket) { // считаем сумму по ценам товаров в объектах, которые содержатся в массиве basket
 	var sum = 0;
