@@ -40,46 +40,48 @@ window.onload = function () {
         cartCont.innerText = ''; // удаляем корзину из браузера
         document.getElementById('cart-sum-qnt').innerText = '' // удаляем сумму корзины из браузера
     })
+
     // Отображаем корзину
     function showCart(e) {
         var cartData = e, // вытаскиваем все данные корзины
             cartSum = new Number(); // создаем переменную, в которую будем заносить сумму заказа
 
-            for (var items in cartData) {
-                cartSum = cartSum + parseInt(cartData[items][1]) * parseInt(cartData[items][3]);
-                document.getElementById('cart-sum-qnt').innerText = cartSum;
-                
-                if(document.getElementById('added' + items)) { // проверяем, есть ли товар в корзине
-                    let updateQnt = document.getElementsByClassName('qnt' + items)[0];
-                    updateQnt.innerHTML = 'Количество: ' + cartData[items][3]; // если есть, меняем его количество, остальное не трогаем
-                } else {
-                    let itemCont = document.createElement('div'); // создаем новый див с уникальным id для добавленного товара
-                    itemCont.setAttribute('id', 'added' + items);
-                    cartCont.appendChild(itemCont);
+        for (var items in cartData) {
+            cartSum = cartSum + parseInt(cartData[items][1]) * parseInt(cartData[items][3]);
+            document.getElementById('cart-sum-qnt').innerText = cartSum;
+
+            if (document.getElementById('added' + items)) { // проверяем, есть ли товар в корзине
+                let updateQnt = document.getElementsByClassName('qnt' + items)[0];
+                updateQnt.innerHTML = 'Количество: ' + cartData[items][3]; // если есть, меняем его количество, остальное не трогаем
+            } else {
+                let itemCont = document.createElement('div'); // создаем новый див с уникальным id для добавленного товара
+                itemCont.setAttribute('id', 'added' + items);
+                cartCont.appendChild(itemCont);
                 for (var i = 0; i < cartData[items].length; i++) { // берем каждый элемент нашего массива в объекте с корзинойй
-                    if(i == 0) {
+                    if (i == 0) { // выводим в браузер имя товара
                         let name = document.createElement('p');
                         name.innerHTML = 'Название товара: ' + cartData[items][i];
-                        itemCont.appendChild(name); // выводим в браузер имя товара
+                        itemCont.appendChild(name); 
                     }
-                    if(i == 1) {
+                    if (i == 1) { // выводим в браузер цену товара
                         let price = document.createElement('p');
                         price.innerHTML = 'Цена: ' + cartData[items][i];
-                        itemCont.appendChild(price); // выводим в браузер цену товара
+                        itemCont.appendChild(price); 
                     }
-                    if(i == 2) {
+                    if (i == 2) { // выводим в браузер картинку товара
                         let image = document.createElement('img');
-                        image.setAttribute('src',cartData[items][i]);
-                        image.setAttribute('width','200');
-                        itemCont.appendChild(image); // выводим в браузер картинку товара
+                        image.setAttribute('src', cartData[items][i]);
+                        image.setAttribute('width', '200');
+                        itemCont.appendChild(image); 
                     }
-                    if(i == 3) {
+                    if (i == 3) { // выводим в браузер количество товара  
                         var quantity = document.createElement('p');
                         quantity.classList.add('qnt' + items);
                         quantity.innerHTML = 'Количество: ' + cartData[items][i];
-                        itemCont.appendChild(quantity); // выводим в браузер количество товара                
+                        itemCont.appendChild(quantity);               
                     }
-                }}
+                }
+            }
         }
     }
 }
