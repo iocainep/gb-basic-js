@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Урок 6 • Обработка событий в JavaScript</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script type="text/javascript" src="gallery.js"></script>
+    <script type="text/javascript" src="addtocart.js"></script>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Урок 6 • Обработка событий в JavaScript</h1>
+    </div>
+    <h2>1) Gallery</h2>
+    <div class="content">
+        <div class="gallery">
+            <img id="image-1" src="https://picsum.photos/seed/1/800" alt="Изображение 1">
+        </div>
+    </div>
+    <div class="footer">
+        <div class="thumbnails">
+            <img id="image-thumbnail-1" src="https://picsum.photos/seed/1/150?blur" data-seed="1"
+                alt="Миниатюра изображения 1">
+            <img id="image-thumbnail-2" src="https://picsum.photos/seed/2/150?blur" data-seed="2"
+                alt="Миниатюра изображения 2">
+            <img id="image-thumbnail-3" src="https://picsum.photos/seed/3/150?blur" data-seed="3"
+                alt="Миниатюра изображения 3">
+        </div>
+    </div>
+    <h2>2) Add to cart</h2>
+    <div class="container">
+    <div class="product-list">
+        <div id="product-1"class="product-item">
+            <h3 class="product-description">T-Shirt</h3>
+            <h4 class="product-price">Price: <span class="item-price">30</span></h4>
+            <img src="tshirt.jpg" class="product-image" width="200">
+            <button data-id="1" class="product-add">Add to cart</button>
+        </div>
+        <div id="product-2" class="product-item">
+            <h3 class="product-description">Beanie</h3>
+            <h4 class="product-price">Price: <span class="item-price">20</span></h4>
+            <img src="beanie.jpg" class="product-image" width="200">
+            <button data-id="2" class="product-add">Add to cart</button>
+        </div>
+        <div id="product-3"class="product-item">
+            <h3 class="product-description">Sunglasses</h3>
+            <h4 class="product-price">Price: <span class="item-price">30</span></h4>
+            <img src="sunglasses.jpg" class="product-image" width="200">
+            <button data-id="3" class="product-add">Add to cart</button>
+        </div>
+    </div>
+    <h2>Cart</h2>
+    <div class="cart-sum"><h3>Cart sum:<span id="cart-sum-qnt"></span></h3></div>
+    <button id="clear-cart">Очистить корзину</button>
+    <div id="cart" class="cart-list"></div>
+    </div>
+</div>
+</body>
+
+</html>

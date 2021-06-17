@@ -1,0 +1,103 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    text-align: center;
+}
+
+h4 {
+    margin: 0 auto;
+    color: red;
+}
+
+.gallery {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery img {
+    width: 400px;
+    height: 400px;
+}
+
+.thumbnails {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding: 20px;
+}
+
+.thumbnails img {
+    padding: 10px;
+    cursor: pointer;
+    transition: transform 150ms ease-in-out;
+}
+
+.thumbnails img:hover {
+    transform: translateY(-5px);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.product-list {
+    display: flex;
+    justify-content: space-around;
+}
+
+.product-description {
+    text-align: center;
+}
+
+.product-item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 20px;
+}
+
+.product-image {
+    margin: 15px 0 0 0;
+}
+
+.product-add {
+    margin: 15px 0;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.cart-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 750px;
+    justify-content: space-around;
+}
+
+.cart-sum {
+    text-align: center;
+}
+
+#clear-cart {
+    margin: 15px 0;
+    width: 130px;
+    height: 25px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
